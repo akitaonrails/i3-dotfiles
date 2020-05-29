@@ -1,19 +1,20 @@
 set $mod Mod1
 
-new_window pixel 1
+new_window pixel 4
 new_float normal
 
-hide_edge_borders none
+hide_edge_borders smart_no_gaps
 
 bindsym $mod+u border none
-bindsym $mod+y border pixel 1
+bindsym $mod+y border pixel 4
 bindsym $mod+n border normal
 
 font xft:URWGothic-Book 11
 
 floating_modifier $mod
 
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # Window kill command
 bindsym $mod+Shift+q kill
@@ -153,6 +154,8 @@ for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 for_window [class="Org.gnome.Nautilus"] floating enable
+for_window [class="anese"] floating enable
+for_window [class="feh"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -222,19 +225,19 @@ exec_always --no-startup-id $HOME/.config/polybar/i3wmthemer_bar_launch.sh
 exec --no-startup-id setxkbmap -layout us -variant alt-intl
 
 # Theme colors
-client.focused #EAD49B #1E272B #EAD49B #9D6A47 #9D6A47
-client.focused_inactive #EAD49B #1E272B #EAD49B #78824B #78824B
-client.unfocused #EAD49B #1E272B #EAD49B #78824B #78824B
-client.urgent #EAD49B #1E272B #EAD49B #78824B #78824B
-client.placeholder #EAD49B #1E272B #EAD49B #78824B #78824B
+client.focused #aab0bc #131822 #aab0bc #233f66 #CCCCCC
+client.focused_inactive #aab0bc #131822 #aab0bc #233f66 #233f66
+client.unfocused #aab0bc #131822 #aab0bc #233f66 #233f66
+client.urgent #aab0bc #131822 #aab0bc #233f66 #233f66
+client.placeholder #aab0bc #131822 #aab0bc #233f66 #233f66
 
-client.background #1E272B
+client.background #131822
 
 # Gaps
-# gaps inner 10
-# gaps outer -4
-# 
-# smart_gaps on
+gaps inner 5
+gaps outer -2
+ 
+smart_gaps on
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner

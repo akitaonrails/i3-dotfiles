@@ -29,6 +29,8 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
 
+Plug 'rhysd/vim-crystal'
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 
@@ -254,6 +256,8 @@ let g:ruby_host_prog="/home/akitaonrails/.asdf/shims/neovim-ruby-host"
 let g:coc_global_extensions = ['coc-solargraph']
 
 " Explorer
+
+nnoremap <C-e> :CocCommand explorer<CR>
 nmap <space>e :CocCommand explorer<CR>
 nmap <space>f :CocCommand explorer --preset floating<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
@@ -274,8 +278,8 @@ if executable('rg')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 
-  " bind G to grep word under cursor
-  nnoremap G :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+  " bind <C-g> to grep word under cursor
+  nnoremap <C-g> :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
   " bind \ (backward slash) to grep shortcut
   "command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
@@ -412,10 +416,29 @@ nnoremap <silent> <leader>bl :ls<CR>
 nnoremap <silent> <leader>bg :ls<CR>:buffer<Space>
 
 " horizontal split with new buffer
-nnoremap <silent> <leader>bh :new<CR>
+nnoremap <silent> <leader>sp :new<CR>
 
 " vertical split with new buffer
-nnoremap <silent> <leader>bv :vnew<CR>
+nnoremap <silent> <leader>vsp :vnew<CR>
+
+" better split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+"Max out the height of the current split
+"ctrl + w _
+"Max out the width of the current split
+"ctrl + w |
+"Normalize all split sizes, which is very handy when resizing terminal
+"ctrl + w =
+"Swap top/bottom or left/right split
+"Ctrl+W R
+"Break out current window into a new tabview
+"Ctrl+W T
+"Close every window in the current tabview but the current one
+"Ctrl+W o
 
 " redraw screan and clear search highlighted items
 "http://stackoverflow.com/questions/657447/vim-clear-last-search-highlighting#answer-25569434

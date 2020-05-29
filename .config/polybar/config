@@ -4,8 +4,8 @@ height = 27
 radius = 0
 fixed-center = true
 
-background = #1E272B
-foreground = #EAD49B
+background = #131822
+foreground = #aab0bc
 
 line-size = 3
 line-color =
@@ -24,9 +24,9 @@ font-0 = "San Francisco Display:size=10;1"
 font-1 = "Font Awesome 5 Free:style=Solid:size=10;1"
 font-2 = "Font Awesome 5 Brands:size=10;1"
 
-modules-left = i3
-modules-center = date
-modules-right = cpu eth alsa powermenu
+modules-left = wlan eth
+modules-center = i3
+modules-right = date powermenu
 
 tray-position = right
 ;tray-padding =
@@ -43,22 +43,22 @@ index-sort = true
 wrapping-scroll = false
 
 label-mode-padding = 2
-label-mode-foreground = #1E272B
-label-mode-background = #78824b
+label-mode-foreground = #131822
+label-mode-background = #131822
 
 label-focused = %index%
-label-focused-background = #78824b
-label-focused-foreground = #6b7443
+label-focused-background = #233f66
+label-focused-foreground = #131822
 label-focused-padding = 2
 
 label-unfocused = %index%
-label-unfocused-background = #78824b
-label-unfocused-foreground = #1E272B
+label-unfocused-background = #233f66
+label-unfocused-foreground = #131822
 label-unfocused-padding = 2
 
 label-visible = %index%
-label-visible-background = #78824b
-label-visible-foreground = #1E272B
+label-visible-background = #233f66
+label-visible-foreground = #131822
 label-visible-padding = 2
 
 label-urgent = %index%
@@ -93,8 +93,8 @@ interface = net1
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = #1E272B
-format-connected-background = #9d6a47
+format-connected-foreground = #131822
+format-connected-background = #233f66
 format-connected-padding = 2
 label-connected = %essid%
 
@@ -105,7 +105,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = #1E272B
+ramp-signal-foreground = #131822
 
 [module/cpu]
 type = internal/cpu
@@ -146,10 +146,10 @@ interface = ens33
 interval = 3.0
 
 format-connected-padding = 2
-format-connected-foreground = #1E272B
-format-connected-background = #9d6a47
+format-connected-foreground = #131822
+format-connected-background = #233f66
 format-connected-prefix = " "
-format-connected-prefix-foreground = #1E272B
+format-connected-prefix-foreground = #131822
 label-connected = %local_ip%
 
 format-disconnected =
@@ -165,8 +165,8 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-foreground = #1E272B
-format-background = #d99f57
+format-foreground = #131822
+format-background = #233f66
 format-padding = 2
 
 label = %date% %time%
@@ -179,11 +179,11 @@ expand-right = true
 format-spacing = 1
 
 label-open = 
-label-open-foreground = #9d6a47
+label-open-foreground = #233f66
 label-close =  cancel
-label-close-foreground = #9d6a47
+label-close-foreground = #233f66
 label-separator = |
-label-separator-foreground = #9d6a47
+label-separator-foreground = #233f66
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
